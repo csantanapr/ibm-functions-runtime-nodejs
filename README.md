@@ -2,13 +2,19 @@
 
 [![Build Status](https://travis-ci.org/ibm-functions/runtime-nodejs.svg?branch=master)](https://travis-ci.org/ibm-functions/runtime-nodejs)
 
-The runtime provides [nodejs v8](nodejs8/) with a set of [npm packages](nodejs8/package.json)
+The runtime provides [nodejs v8](nodejs8/) with a set of pre-installed [npm packages](nodejs8/package.json)
 
-The runtime provides the following npm packages for [IBM Cloud](https://bluemix.net):
-- IBM DB2/DashDB and IBM Informix [ibm_db@2.2.1](https://www.npmjs.com/package/ibm_db)
-- IBM Cloudant [cloudant@1.10.0](https://www.npmjs.com/package/cloudant)
-- IBM Watson Cloud [watson-developer-cloud@2.42.0](https://www.npmjs.com/package/watson-developer-cloud)
-- IBM Cloud Object Storage [ibm-cos-sdk@1.0.2](https://www.npmjs.com/package/ibm-cos-sdk)
+The following npm packages for [IBM Cloud](https://bluemix.net) services are included:
+- IBM DB2/DashDB and IBM Informix [ibm_db](https://www.npmjs.com/package/ibm_db)
+- IBM Cloudant [cloudant](https://www.npmjs.com/package/cloudant)
+- IBM Watson Cloud [watson-developer-cloud@](https://www.npmjs.com/package/watson-developer-cloud)
+- IBM Cloud Object Storage [ibm-cos-sdk](https://www.npmjs.com/package/ibm-cos-sdk)
+
+### Future: IBM Cloud Functions (based on Apache OpenWhisk)
+To use as a nodejs kind action
+```
+bx wsk action update myAction myAction.js --kind nodejs:8
+```
 
 ### How to use as a docker Action
 To use as a docker action
@@ -16,13 +22,6 @@ To use as a docker action
 bx wsk action update myAction myAction.js --docker ibmfunctions/action-nodejs-ibm-v8
 ```
 This works on any deployment of Apache OpenWhisk or IBM Cloud Functions
-
-### Future: IBM Cloud Functions (based on Apache OpenWhisk)
-To use as a nodejs kind action
-```
-bx wsk action update myAction myAction --kind nodejs:8
-```
-Tip: Not available yet in the IBM Cloud
 
 ### Working with the local git repo 
 Prerequisite: *Export* OPENWHISK_HOME to point to your incubator/openwhisk cloned directory.
